@@ -5,13 +5,14 @@ import com.crud.tasks.domain.TaskDto;
 import com.crud.tasks.mapper.TaskMapper;
 import com.crud.tasks.service.DbService;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
+import java.util.List;
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/v1/task")
 @RequiredArgsConstructor
@@ -35,7 +36,7 @@ public class TaskController {
 
     @DeleteMapping(value = "deleteTask")
     public void deleteTask(Long taskId) {
-
+        service.deleteTask(taskId);
     }
 
     @PutMapping(value = "updateTask")
