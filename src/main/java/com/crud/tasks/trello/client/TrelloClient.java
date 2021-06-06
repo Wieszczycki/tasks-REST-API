@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -16,6 +17,7 @@ import java.net.URI;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@CrossOrigin("*")
 @Component
 @RequiredArgsConstructor
 public class TrelloClient {

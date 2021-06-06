@@ -1,9 +1,6 @@
 package com.crud.tasks.trello.client;
 
-import com.crud.tasks.domain.Badges;
-import com.crud.tasks.domain.CreatedTrelloCard;
-import com.crud.tasks.domain.TrelloBoardDto;
-import com.crud.tasks.domain.TrelloCardDto;
+import com.crud.tasks.domain.*;
 import com.crud.tasks.trello.config.TrelloConfig;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -77,7 +74,7 @@ class TrelloClientTest {
                 "http://test.com",
                 new Badges(
                         0,
-                        0
+                        new AttachmentsByType(new Trello (1, 1))
                 )
         );
 
