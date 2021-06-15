@@ -28,17 +28,7 @@ public class TrelloFacade {
     public List<TrelloBoardDto> fetchTrelloBoards() {
         List<TrelloBoard> trelloBoards = trelloMapper.mapToBoards(trelloService.fetchTrelloBoards());
         List<TrelloBoard> filteredBoards = trelloValidator.validateTrelloBoards(trelloBoards);
-//        LOGGER.info("Starting filtering boards...");
-//        List<TrelloBoard> filteredBoards = trelloBoards.stream()
-//                .filter(trelloBoard -> !trelloBoard.getName().equalsIgnoreCase("test"))
-//                .collect(Collectors.toList());
-//        LOGGER.info("Boards have been filtered. Current list size: " + filteredBoards.size());
         return trelloMapper.mapToBoardsDto(filteredBoards);
-        //return trelloMapper.mapToBoards(trelloService.fetchTrelloBoards());
-        //List<TrelloBoardDto> trelloBoards = trelloService.fetchTrelloBoards();
-        //return trelloBoardDto.stream()
-        //        .map(trelloBoardDto -> trelloMapper.mapToBoard(trelloBoardDto))
-        //        .collect(toList());
     }
 
     public CreatedTrelloCardDto createCard(final TrelloCardDto trelloCardDto) {
